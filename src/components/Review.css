@@ -1,0 +1,31 @@
+.box-review{
+    border-radius: 20px;
+    border: 5px #00B4D8 solid;
+    text-align: left;
+    padding: 12px;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+.text-box-container-review{
+    display: flex;
+    flex-direction: column;
+    padding: 6px;
+    margin: 6px;
+    
+}
+.text-box-review{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 600;
+    font-size: 23px;
+    line-height: 125%;
+    padding: 6px;
+    margin: 6px;
+    color: black;
+}
+.text-box-subtitle-review{
+    text-decoration: none;
+    border-radius: 10px;
+    border: 2.5px gray solid; ;
+}

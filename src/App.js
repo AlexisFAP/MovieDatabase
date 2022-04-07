@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 
+import Movies from './components/Movies';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const url = "https://api.themoviedb.org/3/movie/popular?api_key=bce5299a79631aebbe89221f1c2ca561&language=en-US&page=4"
+  const [movies, setMovies] = useState();
+  const fetchApi = async () => {
+    const response = await fetch(url)
+    const responseJSON = await response.json()
+    setMovies(responseJSON.results)
+  }
+  useEffect(() => {
+    fetchApi()
+  }, [])
+  
+  return <div>
+    {!movies ? <div className='text'> Loading...</div> : <Movies movies={movies}/>}
+  </div>
 }
 
 export default App;
